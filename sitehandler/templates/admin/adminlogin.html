@@ -1,0 +1,31 @@
+{% include 'include.html' %}
+{% include 'navbar.html' %}
+{% load static %}
+{% block body %}
+
+{% ifequal error "no" %}
+	<script type="text/javascript">
+		alert('Ha iniciado sesión con éxito..........')
+		window.location = ('{% url 'adminhome' %}')	
+	</script>
+{% endifequal%}
+
+{% ifequal error "yes" %}
+	<script type="text/javascript">
+		alert('Usuario o contraseña inválidos..........')
+	</script>
+{% endifequal%}
+
+<div class="login-dark" style="background-image: url(&quot;{% static 'img/bg_main.jpg' %}&quot;);">
+	<form method="post">
+		{% csrf_token %}
+			<div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+			<div class="form-group"><input type="text" class="form-control" name="username" placeholder="Usuario"></div>
+			<div class="form-group"><input type="password" class="form-control" name="password" placeholder="Contraseña"></div>
+			<div class="form-group"><button class="btn btn-primary btn-block" type="submit">Iniciar sesión</button></div>
+	</form>
+</div>
+
+
+{% endblock %}
+

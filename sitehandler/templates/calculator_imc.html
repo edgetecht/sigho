@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include 'include.html' %}
+    {% load static %}
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="{% static 'css/calc_styles.css' %}">
+</head>
+<body style="background-image: url(&quot;{% static 'img/star-sky.jpg' %}&quot;);">
+    {% comment %} <!--{% include 'adminnav.html' %}--> {% endcomment %}
+    <div id="wrapper">
+        {% comment %} <!--{% include 'admin_include.html' %}--> {% endcomment %}
+		<div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars" style="color: white;"></i></a>
+				<h1 class="text-center" style="color: white;"><span property="schema:name">Calculadora del índice de masa corporal (IMC)</span></h1>
+				<div id="crmIMCCalculadora" style="height: auto; box-sizing: border-box;">
+					<div class="row container" style="margin-bottom:1px;">
+						<div class="col6" style="width: 48%; margin: 0 3% 0 0;">
+							<div id="crmGrafikaContainer" style="position:relative;">
+								<div id="crmObesM" style="position: absolute;text-align: right;top: 4px;" class="etiqueta">Obesidad mórbida: &ge; 45</div>
+								<div id="crmObes" style="position: absolute;text-align: right;top: 36px;" class="etiqueta">Obesidad: 28,61 - 45</div>
+								<div id="crmSobre" style="position: absolute;text-align: right;top: 123px;" class="etiqueta">Sobrepeso: 25,61 - 28,60</div>
+								<div id="crmNorm" style="position: absolute;text-align: right;top: 153px;" class="etiqueta">Peso adecuado: 18,81 - 25,60</div>
+								<div id="crmDel" style="position: absolute;text-align: right;top: 194px;" class="etiqueta">Peso deficiente: &le; 18,80</div>
+								<canvas id="crmGrafikaCanvas" width="50" height="300"></canvas>
+								<img class="crmScale" src="{% static 'img/scale.png' %}">
+							</div>
+							<div id="crmResultContainer"><img class="crmBoxDecor" src="{% static 'img/boxdecor-blue.png' %}">
+								<div id="crmResult">
+									<p style="margin-bottom:0px;">Tu IMC es de 
+										<b>
+											<span id="crmIMC"></span>
+										</b> y está dentro del rango de
+										<b>
+											<span id="crmRango"></span>
+										</b>
+									</p>
+								</div>
+							</div>
+							<div class="crmError">
+								<p style="margin-bottom:0px;">Debes introducir un valor correcto</p>
+								<p style="margin-bottom:0px;">Peso:35kg/200kg Altura:50cm/270cm</p>
+							</div>
+						</div>
+						<div class="col6 crmFormContent" style="width: 48%;">
+							<p style="font-size: 16px">Introduzca su peso</p>
+							<input type="number" id="crmPeso" class="crmInput" min="35" max="200">
+							kg
+							<p style="font-size: 16px">Introduzca su altura</p>
+							<input type="number" id="crmAltura" class="crmInput" min="50" max="300">
+							cm
+							<p>
+								<a id="crmSendButton" href="#">Calcula tu índice 
+									<br>de masa corporal
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>	
+				<script src="{% static 'js/calc_imc1.js' %}"></script>
+			</div>
+		</div>
+	</div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/back-to-top-scroll.js' %}"></script>
+<script src="{% static 'js/Bold-BS4-Animated-Back-To-Top.js' %}"></script>
+<script src="{% static 'js/bs-init.js' %}"></script>
+<script src="{% static 'js/Sidebar-Menu.js' %}"></script>
+</body>
+</html>
+
+

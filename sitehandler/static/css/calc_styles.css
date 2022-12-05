@@ -1,0 +1,155 @@
+#crmIMCCalculadora {
+	background-color: #f8f9fca2;
+	border: 1px solid #269bdf;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 20px;
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: 12px!important;
+}
+.container{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.crmScale {
+	margin-bottom: 0px !important;
+	position: absolute;
+	top: 0px;
+	height: 300px !important;
+	width: 265px !important;
+  left: 0!important;
+}
+.crmInput {
+	margin-bottom: 15px;
+	font-size: 15px;
+	appearance: none;
+	box-shadow: none;
+	border: 1px solid #CCC;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	height: 30px;
+	width: 80%;
+	padding-left: 5px;
+}
+#crmSendButton {
+	padding: 10px;
+	/* background-color: #1d1b5800; */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #FFF;
+	font-size: 18px;
+	display: block;
+	margin-top: 20px;
+	text-align: center;
+	width: 75%;
+	line-height: 24px;
+  text-decoration: none;
+}
+#crmSendButton:hover {
+	background-color: #06C;
+}
+#crmResultContainer {
+	display: none;
+}
+.crmBoxDecor {
+	height: 14px !important;
+	width: 17px !important;
+	margin-bottom: 0 !important;
+	margin-left: 35px;
+}
+#crmResult {
+	background: rgb(84, 156, 228);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 10px;
+	color: #FFF;
+	text-align: center;
+	font-size: 12px;
+	line-height: 25px;
+}
+#crmGrafikaCanvas {
+	margin-left: 3px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.crmError {
+	display: none;
+	background: #FF6C6C;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 10px;
+	color: #FFF;
+	text-align: center;
+	font-size: 17px;
+	line-height: 25px;
+	margin-top: 10px;
+}
+.etiqueta {
+	right: 56px;
+}
+ @media (max-width: 959px) {
+.etiqueta {
+	right: 75px;
+}
+}
+ @media (max-width: 767px) {
+ #crmIMCCalculadora{
+   height: 800px!important;
+ }
+   .container{
+     -webkit-flex-direction: column;
+     -moz-flex-direction: column;
+     -ms-flex-direction: column;
+     -o-flex-direction: column;
+     flex-direction: column;
+     -webkit-justify-content: center;
+     -moz-justify-content: center;
+     justify-content: center;
+   }
+#crmIMCCalculadora .col6 {
+	float: none;
+	/*width: 99%;*/
+  width: 430px!important;
+}
+.etiqueta {
+	right: 70px;
+}
+.crmFormContent {
+	margin: 20px 0 0 30px!important;
+}
+.crmFormContent img {
+	max-width: 100%!important;
+	margin-left: 20px;
+}
+#crmGrafikaContainer {
+	margin-left: 40px;
+}
+}
+ @media (max-width: 479px) {
+   #crmIMCCalculadora .col6{
+     width: 100%!important;
+   }
+.etiqueta {
+	right: 0px;
+}
+#crmGrafikaContainer {
+	margin-left: 0px;
+}
+.crmFormContent {
+	margin: 20px 0 0 15px!important;
+}
+.crmFormContent img {
+	margin-left: 0px;
+}
+}

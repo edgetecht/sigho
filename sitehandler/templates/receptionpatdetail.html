@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include 'include.html' %}
+    {% load static %}
+</head>
+
+<body>
+  {% include 'usersnav.html' %}
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <div class="sidebar">
+              <!-- Sidebar user panel (optional) -->
+              <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="info">
+                  <a href="{% url 'home' %}" class="d-block">{{ user.first_name }}</a>
+                </div>
+              </div>
+              <!-- Sidebar Menu -->
+              <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                  <li class="nav-item">
+                    <a href="{% url 'profile' %}" class="nav-link">
+                      <i class="nav-icon fas fa-user"></i>
+                      <p>
+                        Perfil
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-calendar-check-o"></i>
+                      <p>
+                        Consultas
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="{% url 'makeappointments' %}" class="nav-link">
+                          <i class="fas fa-calendar-plus nav-icon"></i>
+                          <p>
+                            Agregar consulta
+                          </p>
+                        </a>                
+                      </li>
+                      <li class="nav-item">
+                        <a href="{% url 'viewappointments' %}" class="nav-link">
+                          <i class="fas fa-calendar-alt nav-icon"></i>
+                          <p>
+                            Calendario de consultas
+                          </p>
+                        </a>                
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-user-alt"></i>
+                      <p>
+                        Pacientes
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="{% url 'receptionaddpatient' %}" class="nav-link">
+                          <i class="fas fa-user-plus nav-icon"></i>
+                          <p>
+                            Agregar paciente
+                          </p>
+                        </a>                
+                      </li>
+                      <li class="nav-item">
+                        <a href="{% url 'receptionviewPatients' %}" class="nav-link">
+                          <i class="fas fa-eye nav-icon"></i>
+                          <p>
+                            Ver registro de pacientes
+                          </p>
+                        </a>                
+                      </li>
+                    </ul>
+                  </li>          
+                  <li class="nav-item">
+                    <a href="{% url 'logout' %}" class="nav-link">
+                      <i class="nav-icon fas fa-sign-out-alt"></i>
+                      <p>
+                        Cerrar sesión
+                      </p>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- /.sidebar-menu -->
+            </div>
+        </div>
+        <div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+                <div class="row register-form">
+                    <div class="col-md-8 offset-md-2">
+                        {% for p in patient %}
+                        <form class="custom-form" style="margin-top: 0px;">
+                            <h1>Perfil</h1>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Nombre </label></div>
+                                <div class="col-sm-6 input-column">
+                                    <input class="form-control" type="text" readonly="" value="{{ d.name }}">
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Correo electrónico </label></div>
+                                <div class="col-sm-6 input-column">
+                                    <input class="form-control" type="email" readonly="" value="{{ d.email }}">
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Genero</label></div>
+                                <div class="col-sm-4 input-column">
+                                    <input type="text" class="form-control" readonly="" value="{{ d.gender }}">
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Número de telefono</label></div>
+                                <div class="col-sm-6 input-column">
+                                    <input class="form-control" type="tel" value="{{ d.phonenumber }}" readonly="">
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Dirección</label></div>
+                                <div class="col-sm-6 input-column">
+                                    <textarea class="form-control" readonly="">{{ d.address }}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Fecha de nacimiento</label></div>
+                                <div class="col-sm-6 input-column">
+                                    <input class="form-control" type="text" readonly="" value="{{ d.birthdate }}"></div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Grupo sanguíneo</label></div>
+                                <div class="col-sm-6 input-column">
+                                    <input type="text" class="form-control" readonly="" value="{{ d.bloodgroup }}">
+                                </div>
+                            </div>
+                        </form>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-arrow-circle-up"></i></span></div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/back-to-top-scroll.js' %}"></script>
+<script src="{% static 'js/Bold-BS4-Animated-Back-To-Top.js' %}"></script>
+<script src="{% static 'js/bs-init.js' %}"></script>
+<script src="{% static 'js/Sidebar-Menu.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+{% load static %}
+<div id="sidebar-wrapper">
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a href="{% url 'home' %}" class="d-block">{{ user.first_name }}</a>
+        </div>
+      </div>
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="{% url 'profile' %}" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Perfil
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-calendar-check-o"></i>
+              <p>
+                Consultas
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% url 'makeappointments' %}" class="nav-link">
+                  <i class="fas fa-calendar-plus nav-icon"></i>
+                  <p>
+                    Agregar consulta
+                  </p>
+                </a>                
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'viewappointments' %}" class="nav-link">
+                  <i class="fas fa-calendar-alt nav-icon"></i>
+                  <p>
+                    Calendario de consultas
+                  </p>
+                </a>                
+              </li>
+              {% comment %} <li class="nav-item">
+                <a href="{% url 'receptionapointmentlist' %}" class="nav-link">
+                  <i class="fas fa-eye nav-icon"></i>
+                  <p>
+                    Ver registro de consultas
+                  </p>
+                </a>
+              </li> {% endcomment %}
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user-alt"></i>
+              <p>
+                Pacientes
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% url 'receptionaddpatient' %}" class="nav-link">
+                  <i class="fas fa-user-plus nav-icon"></i>
+                  <p>
+                    Agregar paciente
+                  </p>
+                </a>                
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'receptionviewPatients' %}" class="nav-link">
+                  <i class="fas fa-eye nav-icon"></i>
+                  <p>
+                    Ver registro de pacientes
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </li>          
+          <li class="nav-item">
+            <a href="{% url 'logout' %}" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                Cerrar sesión
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+</div>
+{% comment %} <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li> <a href="{% url 'home' %}">Inicio</a></li>
+        <li> <a href="{% url 'profile' %}">Perfil</a></li>
+        <li> <a href="{% url 'viewappointments' %}">Ver registro de consultas</a></li>
+        <li> <a href="{% url 'makeappointments' %}">Agregar consulta</a></li>
+        <li> <a href="{% url 'logout' %}">Cerrar sección</a></li>
+    </ul>
+</div> {% endcomment %}

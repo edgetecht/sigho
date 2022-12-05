@@ -1,0 +1,215 @@
+#crmCalculadoraPeso{
+    background-color: #f8f9fca2;
+    border:1px solid #000;
+    padding:10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: 12px!important;
+}
+.container{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+bascula{
+  margin-right: 3%;
+}
+.crmCalcText{
+    font-size:12px;
+}
+
+#crmSendButton{
+    padding:10px;
+    background-color:#1d1b58;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color:#FFF;
+    font-size:18px;
+    display:block;
+    margin-top:20px;
+    text-align:center;
+    width:75%;
+  text-decoration: none;
+}
+
+#crmSendButton:hover{
+    background-color:#06C;
+}
+
+.crmInput{
+    margin-bottom:15px;
+    font-size: 15px;
+      appearance: none;
+      box-shadow: none;
+    border:1px solid #CCC;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 30px;
+    width: 80%;
+    padding-left:5px;
+}
+
+.crmSelect{
+    font-size: 15px;
+    border:1px solid #CCC;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 30px;
+    width: 80%;
+}
+
+.crmPesoImageContainer {
+    position: relative;
+    text-align: center;
+}
+
+.crmPesoImageContainer > img {
+    margin: 20px auto 0;
+    width: 230px;
+}
+
+#crmMiPeso {
+    color: #fff;
+    font-family: "VT323";
+    font-size: 72px;
+    display:block;
+    width:100%;
+    text-align:center;
+    position: absolute;
+    top: 40px;
+}
+
+.crmKGLeyend {
+    color: #fff;
+    font-family: "VT323";
+    font-size: 30px;
+    display:block;
+    text-align:center;
+    position: absolute;
+    top: 95px;
+    width: 100%;
+}
+
+.crmResultContainer{
+    display:none;
+  text-align: center;
+}
+
+#crmResult{
+    background:#0097d8;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding:10px;
+    color:#FFF;
+    text-align:center;
+    font-size:17px;
+    line-height:25px;
+}
+
+.crmBoxDecor{
+    height:15px !important;
+    width:18px !important;
+    margin-bottom:0 !important;
+    margin: 0 auto;
+}
+
+.crmError{
+    display:none;
+    background:#FF6C6C;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding:10px;
+    color:#FFF;
+    text-align:center;
+    font-size:17px;
+    line-height:25px;
+    margin-top:10px;
+}
+.col6.crmFormContent img {
+    margin: 0 0 0 15px;
+    width: 230px;
+}
+
+@media (max-width: 767px) {
+#crmCalculadoraPeso{
+  height: 780px!important;
+}
+.container{
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+    .crmFormContent{
+        margin-top:15px;
+        text-align:center;
+    }
+
+    .crmInput{
+        width:100%;
+    }
+
+    .crmSelect{
+        width:100%;
+    }
+
+    #crmSendButton{
+        width:95%;
+    }
+    .crmPesoImageContainer > img {
+        margin: 0 auto;
+        width: 250px;
+    }
+#crmMiPeso {
+    color: #fff;
+    font-family: "VT323";
+    font-size: 80px;
+    display:block;
+    width:100%;
+    text-align:center;
+    position: absolute;
+    top: 18px;
+}
+
+.crmKGLeyend {
+    color: #fff;
+    font-family: "VT323";
+    font-size: 30px;
+    display:block;
+    text-align:center;
+    position: absolute;
+    top: 95px;
+    width: 100%;
+}
+#crmCalculadoraPeso .col6 {
+    float: none!important;
+    width:99%!important;
+}
+.col6.crmFormContent img {
+    margin: 0 0 0 65px;
+    width: 230px;
+}
+}
+@media (max-width: 479px) {
+.col6.crmFormContent img {
+    margin: 0;
+    width: auto;
+  max-width: 100%;
+}
+
+}

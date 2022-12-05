@@ -1,0 +1,19 @@
+{% load static %}
+<nav class="navbar navbar-dark navbar-expand-md sticky-top bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand text-center" href="{% url 'homepage' %}" style="margin: 0px 0px;">
+            <img src="{% static 'img/SIGHOLogo.png' %}" href="{% url 'homepage' %}" width="50px" height="50px" alt="10px">
+            <span>.::Sistema de Gestión de Hogares Maternos::.</span>
+        </a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+            <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav text-light ml-auto">
+                {% comment %} <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'homepage' %}">Inicio</a></li> {% endcomment %}
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'loginpage' %}">Iniciar sesión</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'aboutpage' %}">Acerca de</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,22 @@
+{% load static %}
+
+{% ifequal error "no" %}
+    {% ifequal page "doctor" %}
+    <script type="text/javascript">
+        alert('Ha iniciado sesión con éxito..........')
+        window.location = ('{% url 'home' %}')
+    </script>
+    {% endifequal %}
+    {% ifequal page "reception" %}
+    <script type="text/javascript">
+        alert('Ha iniciado sesión con éxito..........')
+        window.location = ('{% url 'home' %}')
+    </script>
+    {% endifequal %}
+    {% ifequal error "yes" %}
+    <script type="text/javascript">
+        alert('Credenciales inválidas, intente de nuevo..........')
+    </script>
+    {% endifequal%}
+{% endifequal%}
+
